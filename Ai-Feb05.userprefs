@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SmellThingRoamer.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Mover.cs" Line="14" Column="28" />
+      <File FileName="Assets\Scripts\CamerMover.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ChaserMover.cs" Line="6" Column="2" />
+      <File FileName="Assets\Scripts\SmellThingChaser.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SmellThingRoamer.cs" Line="14" Column="54" />
+      <File FileName="Assets\Scripts\SnifferMover.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Waypoint.cs" Line="22" Column="5" />
+      <File FileName="Assets\Scripts\RoamerMover.cs" Line="37" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

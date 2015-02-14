@@ -82,8 +82,8 @@ public class SnifferMover : MonoBehaviour {
 
 			Debug.Log ("Hit");
 			//Damage the player by taking health away from him/her
-			PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
-			playerHealth.decreaseHealth(attackStrength);
+			//PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+			//playerHealth.decreaseHealth(attackStrength);
 
 		}
 

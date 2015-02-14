@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{EFE32D65-E414-4A0D-743A-295A6A05C2FA}</ProjectGuid>
+	<ProjectGuid>{A28F82E7-9CBE-3D2F-024A-6868B84F2BA2}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -47,15 +47,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CamerMover.cs" />
-     <Compile Include="Assets\Scripts\ChaserMover.cs" />
-     <Compile Include="Assets\Scripts\EnemyFOV.cs" />
+     <Compile Include="Assets\Scripts\Deprecated\ChaserMover.cs" />
+     <Compile Include="Assets\Scripts\Deprecated\EnemyFOV.cs" />
+     <Compile Include="Assets\Scripts\Deprecated\RoamerMover.cs" />
+     <Compile Include="Assets\Scripts\Deprecated\SmellThing.cs" />
+     <Compile Include="Assets\Scripts\Deprecated\SmellThingChaser.cs" />
+     <Compile Include="Assets\Scripts\Deprecated\SmellThingRoamer.cs" />
+     <Compile Include="Assets\Scripts\Deprecated\SnifferMover.cs" />
+     <Compile Include="Assets\Scripts\Deprecated\Waypoint.cs" />
+     <Compile Include="Assets\Scripts\EnemyMover.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
-     <Compile Include="Assets\Scripts\RoamerMover.cs" />
-     <Compile Include="Assets\Scripts\SmellThing.cs" />
-     <Compile Include="Assets\Scripts\SmellThingChaser.cs" />
-     <Compile Include="Assets\Scripts\SmellThingRoamer.cs" />
-     <Compile Include="Assets\Scripts\SnifferMover.cs" />
-     <Compile Include="Assets\Scripts\Waypoint.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

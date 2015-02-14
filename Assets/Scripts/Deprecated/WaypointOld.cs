@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Waypoint : MonoBehaviour {
+public class WaypointOld : MonoBehaviour {
 
 	public Transform nextWaypoint;
 

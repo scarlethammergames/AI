@@ -13,7 +13,7 @@ public class NavPointMover : MonoBehaviour {
 		//setting agent
 		this.agent = GetComponent<NavMeshAgent> ();
 
-		waypoint = GameObject.FindWithTag ("Waypoint").transform;
+		waypoint = GameObject.FindWithTag ("Player").transform;
 
 	}
 
@@ -52,4 +52,5 @@ public class NavPointMover : MonoBehaviour {
 		Move ();
 
 	}
+
 }

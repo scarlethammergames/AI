@@ -3,6 +3,7 @@ using System.Collections;
 
 public class RoamerMover : MonoBehaviour {
 
+	public int attackStrength = 10;
 	private NavMeshAgent agent;
 	private string objectHit;
 	public bool foundPlayer;
@@ -31,6 +32,7 @@ public class RoamerMover : MonoBehaviour {
 	{
 
 		target = newPosition;
+
 				
 	}
 
@@ -38,6 +40,7 @@ public class RoamerMover : MonoBehaviour {
 	{
 		foundPlayer = true;
 		target = newPosition;
+		gameObject.renderer.material.color = Color.red;
 
 	}
 	
@@ -51,12 +54,12 @@ public class RoamerMover : MonoBehaviour {
 		{
 			
 			Debug.Log ("Hit");
-			//TODO
 			//Damage the player by taking health away from him/her
-			
+			PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+			playerHealth.decreaseHealth(attackStrength);
 		}
 		
-		if(objectHit.Equals ("Resource") || objectHit.Equals ("Projectile"))
+		if(objectHit.Equals ("EnviroTile"))
 		{
 			
 			Debug.Log ("NomNomNom");

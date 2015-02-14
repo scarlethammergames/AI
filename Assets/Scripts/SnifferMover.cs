@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SnifferMover : MonoBehaviour {
 
+	public int attackStrength = 10;
 	private NavMeshAgent agent;
 	private string objectHit;
 	private bool foundTarget;
@@ -39,16 +40,34 @@ public class SnifferMover : MonoBehaviour {
 
 		}
 
-		agent.SetDestination(target.position);
-	
+       
+        agent.SetDestination(target.position);
+        
 	}
 
-	public void setTarget(Transform chaseTarget)
+	public void setTarget(Transform chaseTarget, bool isPlayer)
 	{
 
 		foundTarget = true;
 		target = chaseTarget;
 
+		if(isPlayer){
+			gameObject.renderer.material.color = Color.red;
+		}
+
+	}
+
+	
+	IEnumerator turnsGreen()
+	{
+
+		gameObject.renderer.material.color = Color.green;
+		
+		yield return new WaitForSeconds(0.5f);
+
+		gameObject.renderer.material.color = Color.yellow;
+
+		
 	}
 
 
@@ -62,14 +81,15 @@ public class SnifferMover : MonoBehaviour {
 		{
 
 			Debug.Log ("Hit");
-			//TODO
 			//Damage the player by taking health away from him/her
+			PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+			playerHealth.decreaseHealth(attackStrength);
 
 		}
 
-		if(objectHit.Equals ("Resource") || objectHit.Equals ("Projectile"))
+		if(objectHit.Equals ("EnviroTile"))
 		{
-
+			StartCoroutine(turnsGreen());
 			Debug.Log ("NomNomNom");
 			Destroy(other.gameObject);
 			foundTarget = false;

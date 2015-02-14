@@ -17,7 +17,7 @@ public class SmellThingChaser : MonoBehaviour {
 		}
 
 		//goes after player first. Also encounters resources, supply depot, and remote depots
-		if(other.tag.Equals ("Resource") || other.tag.Equals ("Projectile") || other.tag.Equals ("ResourceDepot") || other.tag.Equals("RemoteDepot"))
+		if(other.tag.Equals ("EnviroTile") || other.tag.Equals ("ResourceDepot") || other.tag.Equals("RemoteDepot"))
 		{
 			gameObject.GetComponent<ChaserMover>().setTarget(other.gameObject.transform);
 		}

@@ -9,6 +9,8 @@ public class Killer_Mover : AI_Mover {
 
 		//setting agent
 		this.agent = GetComponent<NavMeshAgent> ();
+
+		this.prevWaypoint = this.waypoint;
 		
 		gameObject.renderer.material.color = Color.green;
 		

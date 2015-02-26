@@ -4,16 +4,33 @@ using System.Collections;
 public class Feeder_Mover : AI_Mover {
 
 	Transform tempTarget;
+	bool isRunning;
+	public float timeUntilBored;
+	public float smellingRadius;
 
 	// Use this for initialization
 	void Start ()
 	{
-		
+
+		isRunning = false;
+
+		this.prevWaypoint = this.waypoint;
+
 		//setting agent
 		this.agent = GetComponent<NavMeshAgent> ();
 		
 		gameObject.renderer.material.color = Color.magenta;
+
+		updateSmellRange ();
 		
+	}
+
+	void updateSmellRange()
+	{
+
+		SphereCollider myCollider = gameObject.GetComponentInChildren<Sphere_Of_Influence_Feeder>().gameObject.transform.GetComponent<SphereCollider>();
+		myCollider.radius = this.smellingRadius;
+
 	}
 	
 	// Update is called once per frame
@@ -22,7 +39,6 @@ public class Feeder_Mover : AI_Mover {
 		
 		move ();
 
-		gameObject.renderer.material.color = Color.magenta;
 
 		
 	}
@@ -39,13 +55,15 @@ public class Feeder_Mover : AI_Mover {
 		
 		this.interested = true;
 
+		gameObject.renderer.material.color = Color.yellow;
+
 		react ();
-		
+
 	}
 
 	protected override void react()
 	{
-		//Debug.Log ("reacting");
+
 		this.waypoint = this.tempTarget;
 		
 	}
@@ -74,27 +92,52 @@ public class Feeder_Mover : AI_Mover {
 		{
 
 			//OMNOMNOMTEXT
-
+			Debug.Log ("NOM");
 			gameObject.renderer.material.color = Color.yellow;
 
-			this.interested = false;
+			StartCoroutine(noMoreFood());
 
-			Destroy (other.gameObject);
+			other.gameObject.SetActive(false);
 
 		}
 		
 	}
 
+	IEnumerator noMoreFood()
+	{
+
+		isRunning = true;
+
+		Debug.Log ("Now waiting");
+
+		yield return new WaitForSeconds (this.timeUntilBored);
+
+		Debug.Log ("Not interested");
+
+		notInterested ();
+
+	}
+
 	public void notInterested()
 	{
-		
+
+		StopCoroutine ("noMoreFood");
+
+		this.isRunning = false;
+
 		this.interested = false;
 
-		Transform tempWaypoint = this.waypoint;
+		//Transform tempWaypoint = this.waypoint;
 
 		this.waypoint = this.prevWaypoint;
 
-		this.prevWaypoint = tempWaypoint;
+		//this.prevWaypoint = tempWaypoint;
+
+		gameObject.renderer.material.color = Color.magenta;
+
+		SphereCollider myCollider = gameObject.GetComponentInChildren<Sphere_Of_Influence_Feeder>().gameObject.transform.GetComponent<SphereCollider>();
+		myCollider.radius = this.smellingRadius;
+		
 
 	}
 

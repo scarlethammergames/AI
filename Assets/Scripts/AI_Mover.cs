@@ -8,6 +8,7 @@ public class AI_Mover : MonoBehaviour {
 	public Transform waypoint;
 	protected bool interested;
 	protected Transform prevWaypoint;
+	public int Health;
 
 	public bool interest()
 	{
@@ -48,7 +49,7 @@ public class AI_Mover : MonoBehaviour {
 	protected void move()
 	{
 		
-		agent.SetDestination (this.waypoint.position);
+		this.agent.SetDestination (this.waypoint.position);
 
 	}
 
@@ -57,6 +58,18 @@ public class AI_Mover : MonoBehaviour {
 		Debug.Log ("reacting");
 		updateWaypoint (GameObject.FindGameObjectWithTag ("Player").gameObject.transform);
 		
+	}
+
+
+	public void notInterested()
+	{
+
+		this.interested = false;
+
+		this.waypoint = this.prevWaypoint;
+
+		gameObject.renderer.material.color = Color.green;
+
 	}
 	
 

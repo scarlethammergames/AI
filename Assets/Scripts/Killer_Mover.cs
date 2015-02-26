@@ -7,6 +7,7 @@ public class Killer_Mover : AI_Mover {
 	// Use this for initialization
 	void Start () {
 
+		this.Health = 100;
 		//setting agent
 		this.agent = GetComponent<NavMeshAgent> ();
 		
@@ -23,6 +24,8 @@ public class Killer_Mover : AI_Mover {
 		move ();
 		
 	}
+
+	//oncollision with player balls lose health
 
 
 }

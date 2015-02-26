@@ -1,26 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NavPointMover : MonoBehaviour {
+public class AI_Mover : MonoBehaviour {
 
 
 	private NavMeshAgent agent;
 	private Transform waypoint;
 	private bool interested;
 	private Transform prevWaypoint;
-	private ObjectMover NavPointFollower;
 
 
 	// Use this for initialization
 	void Start () {
-	
-		this.NavPointFollower = GetComponentInChildren<ObjectMover> ();
-
+		
 		//setting agent
 		this.agent = GetComponent<NavMeshAgent> ();
-
+		
 		this.waypoint = GameObject.FindWithTag ("Player").transform;
-
+		
 	}
 	
 	// Update is called once per frame
@@ -45,7 +42,6 @@ public class NavPointMover : MonoBehaviour {
 	//sets the next waypoint for the nav point to move towards
 	public void setWaypoint(Transform nextWaypoint)
 	{
-		NavPointFollower.SetPosition (nextWaypoint);
 
 		this.prevWaypoint = this.waypoint;
 

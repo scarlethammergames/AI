@@ -46,16 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CamerMover.cs" />
+     <Compile Include="Assets\Scripts\AI_Mover.cs" />
+     <Compile Include="Assets\Scripts\Deprecated\CamerMover.cs" />
      <Compile Include="Assets\Scripts\Deprecated\ChaserMover.cs" />
      <Compile Include="Assets\Scripts\Deprecated\EnemyFOV.cs" />
+     <Compile Include="Assets\Scripts\Deprecated\EnemyMover.cs" />
      <Compile Include="Assets\Scripts\Deprecated\RoamerMover.cs" />
      <Compile Include="Assets\Scripts\Deprecated\SmellThing.cs" />
      <Compile Include="Assets\Scripts\Deprecated\SmellThingChaser.cs" />
      <Compile Include="Assets\Scripts\Deprecated\SmellThingRoamer.cs" />
      <Compile Include="Assets\Scripts\Deprecated\SnifferMover.cs" />
      <Compile Include="Assets\Scripts\Deprecated\WaypointOld.cs" />
-     <Compile Include="Assets\Scripts\EnemyMover.cs" />
+     <Compile Include="Assets\Scripts\Killer_Mover.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\NavPointMover.cs" />
      <Compile Include="Assets\Scripts\ObjectMover.cs" />

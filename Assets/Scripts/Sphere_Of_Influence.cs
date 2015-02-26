@@ -4,11 +4,12 @@ using System.Collections;
 public class Sphere_Of_Influence : MonoBehaviour {
 
 	bool isRunning;
+	public float timeUntilLost;
 
 	void Start()
 	{
 
-		isRunning = false;
+		this.isRunning = false;
 
 	}
 
@@ -60,7 +61,7 @@ public class Sphere_Of_Influence : MonoBehaviour {
 
 		this.isRunning = true;
 
-		yield return new WaitForSeconds (5.0f);
+		yield return new WaitForSeconds (this.timeUntilLost);
 
 		GetComponentInParent<Killer_Mover> ().notInterested ();
 

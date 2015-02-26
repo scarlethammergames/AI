@@ -8,20 +8,18 @@ public class Waypoint : MonoBehaviour {
 
 	public Transform nextWaypoint;
 
-
-	// Use this for initialization
-	void Start () {
-	
-
-	}
-	
-	public Transform getNextWaypoint()
+	void OnTriggerEnter(Collider other)
 	{
 
-		return this.nextWaypoint;
+		if(other.tag.Equals ("Killer") && !other.gameObject.GetComponent<Killer_Mover>().interest() )
+		{
+			Debug.Log (this.gameObject.name);
+			
+			other.gameObject.GetComponent<Killer_Mover>().updateWaypoint(this.nextWaypoint);
+			
+		}
 
 	}
-
 
 
 }

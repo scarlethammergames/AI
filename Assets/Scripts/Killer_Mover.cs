@@ -3,9 +3,10 @@ using System.Collections;
 
 public class Killer_Mover : AI_Mover {
 
+
 	// Use this for initialization
 	void Start () {
-		
+
 		//setting agent
 		this.agent = GetComponent<NavMeshAgent> ();
 		
@@ -17,13 +18,11 @@ public class Killer_Mover : AI_Mover {
 	void Update () 
 	{
 		
-		Debug.Log (interested);
+		Debug.Log (this.interested);
 		
 		move ();
 		
 	}
-
-
 
 
 }

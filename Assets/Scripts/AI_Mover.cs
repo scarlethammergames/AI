@@ -9,21 +9,13 @@ public class AI_Mover : MonoBehaviour {
 	protected bool interested;
 	protected Transform prevWaypoint;
 
-	
-
-	protected void OnTriggerEnter(Collider other)
+	public bool interest()
 	{
 
-		Debug.Log ("SHIEEEEIT");
+		return interested;
 
-		if(other.tag.Equals ("Waypoint") && !interested)
-		{
-			
-			updateWaypoint(other.gameObject.GetComponent<Waypoint>().getNextWaypoint());
-			
-		}
-		
 	}
+
 
 	public void isInterested()
 	{
@@ -43,7 +35,7 @@ public class AI_Mover : MonoBehaviour {
 		
 	}
 
-	protected void updateWaypoint(Transform nextWaypoint)
+	public void updateWaypoint(Transform nextWaypoint)
 	{
 
 		this.prevWaypoint = this.waypoint;
@@ -67,6 +59,7 @@ public class AI_Mover : MonoBehaviour {
 		
 	}
 	
+
 	//protected virtual void react() {}
 
 	//void lostPlayer() {}

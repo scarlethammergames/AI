@@ -12,6 +12,7 @@ public class Sphere_Of_Influence : MonoBehaviour {
 
 	}
 
+
 	void OnTriggerEnter(Collider other)
 	{
 
@@ -21,13 +22,13 @@ public class Sphere_Of_Influence : MonoBehaviour {
 			if(GetComponentInParent<Killer_Mover>().interest ())
 			{
 
-				if (this.isRunning) {
+				if (this.isRunning) 
+				{
 					
 					StopCoroutine ("lost_player_timer");
 					
 					this.isRunning = false;
-
-					//	
+				
 				}
 
 				return;
@@ -40,6 +41,7 @@ public class Sphere_Of_Influence : MonoBehaviour {
 		
 	}
 
+
 	void OnTriggerExit(Collider other)
 	{
 
@@ -51,6 +53,7 @@ public class Sphere_Of_Influence : MonoBehaviour {
 		}
 
 	}
+
 
 	IEnumerator lost_player_timer() 
 	{

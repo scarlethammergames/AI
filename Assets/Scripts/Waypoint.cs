@@ -2,21 +2,21 @@
 using System.Collections;
 
 public class Waypoint : MonoBehaviour {
-
-	//public float height;
-	//public float radius;
-
+	
 	public Transform nextWaypoint;
+
 
 	void OnTriggerEnter(Collider other)
 	{
 
-		if(other.tag.Equals ("Killer") && !other.gameObject.GetComponent<Killer_Mover>().interest() )
+		if(other.tag.Equals ("Killer") )
 		{
-			Debug.Log (this.gameObject.name);
+			if( !other.gameObject.GetComponent<Killer_Mover>().interest() )
+			{
+
+				other.gameObject.GetComponent<Killer_Mover>().updateWaypoint(this.nextWaypoint);
 			
-			other.gameObject.GetComponent<Killer_Mover>().updateWaypoint(this.nextWaypoint);
-			
+			}
 		}
 
 	}

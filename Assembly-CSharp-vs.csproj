@@ -57,12 +57,15 @@
      <Compile Include="Assets\Scripts\Deprecated\SmellThingRoamer.cs" />
      <Compile Include="Assets\Scripts\Deprecated\SnifferMover.cs" />
      <Compile Include="Assets\Scripts\Deprecated\WaypointOld.cs" />
+     <Compile Include="Assets\Scripts\Feeder_Mover.cs" />
      <Compile Include="Assets\Scripts\Killer_Mover.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\NavPointMover.cs" />
      <Compile Include="Assets\Scripts\ObjectMover.cs" />
      <Compile Include="Assets\Scripts\Sphere_Of_Influence.cs" />
+     <Compile Include="Assets\Scripts\Sphere_Of_Influence_Feeder.cs" />
      <Compile Include="Assets\Scripts\Waypoint.cs" />
+     <Compile Include="Assets\Scripts\Waypoint_Feeder.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

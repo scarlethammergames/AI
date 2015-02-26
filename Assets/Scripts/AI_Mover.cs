@@ -9,6 +9,7 @@ public class AI_Mover : MonoBehaviour {
 	protected bool interested;
 	protected Transform prevWaypoint;
 	public int Health;
+	public int damageTaken;
 
 	public bool interest()
 	{
@@ -18,16 +19,8 @@ public class AI_Mover : MonoBehaviour {
 	}
 
 
-	public void isInterested()
-	{
-
-		this.interested = true;
-
-		gameObject.renderer.material.color = Color.red;
-	
-		react ();
-
-	}
+	public virtual void isInterested()
+	{	}
 
 	public Transform getPosition()
 	{
@@ -53,30 +46,15 @@ public class AI_Mover : MonoBehaviour {
 
 	}
 
-	void react()
+	protected virtual void react()
 	{
-		Debug.Log ("reacting");
-		updateWaypoint (GameObject.FindGameObjectWithTag ("Player").gameObject.transform);
+	//	Debug.Log ("reacting");
+	//	updateWaypoint (GameObject.FindGameObjectWithTag ("Player").gameObject.transform);
 		
 	}
 
 
-	public void notInterested()
-	{
 
-		this.interested = false;
-
-		this.waypoint = this.prevWaypoint;
-
-		gameObject.renderer.material.color = Color.green;
-
-	}
 	
-
-	//protected virtual void react() {}
-
-	//void lostPlayer() {}
-
-	//IEnumerator lost_player_timer() {}
 
 }

@@ -15,18 +15,24 @@ public class Sphere_Of_Influence : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 
-		if(other.tag.Equals ("Player"))
+		if(other.tag.Equals ("Player") )
 		{
 
-			//if (this.isRunning) {
-				
-			//	StopCoroutine ("lost_player_timer");
+			if(GetComponentInParent<Killer_Mover>().interest ())
+			{
 
-			//	this.isRunning = false;
+				if (this.isRunning) {
+					
+					StopCoroutine ("lost_player_timer");
+					
+					this.isRunning = false;
 
-			///	return;
-			//	
-			//}
+					//	
+				}
+
+				return;
+
+			}
 
 			GetComponentInParent<Killer_Mover>().isInterested();
 			

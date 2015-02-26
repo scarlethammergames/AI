@@ -13,7 +13,7 @@ public class AI_Mover : MonoBehaviour {
 	public bool interest()
 	{
 
-		return interested;
+		return this.interested;
 
 	}
 

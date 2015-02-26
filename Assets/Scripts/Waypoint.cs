@@ -12,9 +12,6 @@ public class Waypoint : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		//CapsuleCollider cc = GetComponent<CapsuleCollider> ();
-		//cc.height = height;
-		//cc.radius = radius;
 
 	}
 	
@@ -25,11 +22,6 @@ public class Waypoint : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter(Collider other)
-	{
 
-		Debug.Log ("Hit");
-
-	}
 
 }

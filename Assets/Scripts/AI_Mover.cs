@@ -4,51 +4,38 @@ using System.Collections;
 public class AI_Mover : MonoBehaviour {
 
 
-	private NavMeshAgent agent;
-	private Transform waypoint;
-	private bool interested;
-	private Transform prevWaypoint;
+	protected NavMeshAgent agent;
+	public Transform waypoint;
+	protected bool interested;
+	protected Transform prevWaypoint;
 
-
-	// Use this for initialization
-	void Start () {
-		
-		//setting agent
-		this.agent = GetComponent<NavMeshAgent> ();
-		
-		this.waypoint = GameObject.FindWithTag ("Player").transform;
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
 	
 
-		if( interested )
-		{
-
-			react ();
-		}
-		else
-		{
-
-			move ();
-
-		}
-
-
-	}
-
-	//sets the next waypoint for the nav point to move towards
-	public void setWaypoint(Transform nextWaypoint)
+	protected void OnTriggerEnter(Collider other)
 	{
 
-		this.prevWaypoint = this.waypoint;
+		Debug.Log ("SHIEEEEIT");
 
-		this.waypoint = nextWaypoint;
+		if(other.tag.Equals ("Waypoint") && !interested)
+		{
+			
+			updateWaypoint(other.gameObject.GetComponent<Waypoint>().getNextWaypoint());
+			
+		}
 		
 	}
+
+	public void isInterested()
+	{
+
+		this.interested = true;
+
+		gameObject.renderer.material.color = Color.red;
 	
+		react ();
+
+	}
+
 	public Transform getPosition()
 	{
 		
@@ -56,13 +43,31 @@ public class AI_Mover : MonoBehaviour {
 		
 	}
 
-	void move(){
+	protected void updateWaypoint(Transform nextWaypoint)
+	{
+
+		this.prevWaypoint = this.waypoint;
+		
+		this.waypoint = nextWaypoint;
+
+	}
+	
+
+	protected void move()
+	{
 		
 		agent.SetDestination (this.waypoint.position);
 
 	}
+
+	void react()
+	{
+		Debug.Log ("reacting");
+		updateWaypoint (GameObject.FindGameObjectWithTag ("Player").gameObject.transform);
+		
+	}
 	
-	void react() {}
+	//protected virtual void react() {}
 
 	//void lostPlayer() {}
 

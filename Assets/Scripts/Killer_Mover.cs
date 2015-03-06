@@ -26,7 +26,7 @@ public class Killer_Mover : AI_Mover {
 
 	protected override void react()
 	{
-		Debug.Log ("reacting");
+
 		updateWaypoint (GameObject.FindGameObjectWithTag ("Player").gameObject.transform);
 
 	}

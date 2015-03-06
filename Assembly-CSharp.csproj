@@ -58,7 +58,9 @@
      <Compile Include="Assets\Scripts\Deprecated\SnifferMover.cs" />
      <Compile Include="Assets\Scripts\Deprecated\WaypointOld.cs" />
      <Compile Include="Assets\Scripts\Feeder_Mover.cs" />
+     <Compile Include="Assets\Scripts\Feeder_Spawner.cs" />
      <Compile Include="Assets\Scripts\Killer_Mover.cs" />
+     <Compile Include="Assets\Scripts\Killer_Spawner.cs" />
      <Compile Include="Assets\Scripts\Mover.cs" />
      <Compile Include="Assets\Scripts\NavPointMover.cs" />
      <Compile Include="Assets\Scripts\ObjectMover.cs" />

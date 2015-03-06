@@ -41,9 +41,16 @@ public class AI_Mover : MonoBehaviour {
 
 	protected void move()
 	{
-		
-		this.agent.SetDestination (this.waypoint.position);
 
+		if(this.waypoint == null)
+		{
+
+			return;
+
+		}
+
+		this.agent.SetDestination (this.waypoint.position);
+	
 	}
 
 	protected virtual void react()

@@ -11,10 +11,10 @@ public class Waypoint_Feeder : MonoBehaviour {
 
 		if(other.tag.Equals ("Feeder") )
 		{
-			if(!other.gameObject.GetComponent<Feeder_Mover>().interest() )
-			{
+			//if(!other.gameObject.GetComponent<Feeder_Mover>().interest() )
+			//{
 				other.gameObject.GetComponent<Feeder_Mover>().updateWaypoint(this.nextWaypoint);
-			}
+			//}
 		}
 
 	}

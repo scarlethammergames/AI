@@ -11,10 +11,12 @@ public class Sphere_Of_Influence_Feeder : MonoBehaviour {
 		if(other.tag.Equals ("EnviroTile"))
 		{
 
-
-
-
-
+			//stop moving
+			//pull shit in
+			//keep moving
+			SphereCollider myCollider = transform.GetComponent<SphereCollider>();
+			myCollider.radius = this.eatingRadius;
+			GetComponentInParent<Feeder_Mover>().isInterested ();
 
 
 			/*

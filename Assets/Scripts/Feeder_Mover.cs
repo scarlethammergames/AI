@@ -4,7 +4,8 @@ using System.Collections;
 public class Feeder_Mover : AI_Mover {
 
 	Transform tempTarget;
-	bool isRunning;
+	//bool isRunning;
+	bool isFeeding;
 	public float timeUntilBored;
 	public float smellingRadius;
 
@@ -12,7 +13,8 @@ public class Feeder_Mover : AI_Mover {
 	void Start ()
 	{
 
-		isRunning = false;
+		//isRunning = false;5
+
 
 		this.prevWaypoint = this.waypoint;
 
@@ -85,7 +87,7 @@ public class Feeder_Mover : AI_Mover {
 				
 			}	
 			
-			this.Health -= damageTaken;
+			this.Health = this.Health - damageTaken;
 			
 		}
 		else if(other.gameObject.tag.Equals("EnviroTile"))
@@ -95,18 +97,18 @@ public class Feeder_Mover : AI_Mover {
 			Debug.Log ("NOM");
 			gameObject.renderer.material.color = Color.yellow;
 
-			StartCoroutine(noMoreFood());
+			//StartCoroutine(noMoreFood());
 
 			other.gameObject.SetActive(false);
 
 		}
 		
 	}
-
+	/*
 	IEnumerator noMoreFood()
 	{
 
-		isRunning = true;
+		//isRunning = true;
 
 		Debug.Log ("Now waiting");
 
@@ -116,20 +118,20 @@ public class Feeder_Mover : AI_Mover {
 
 		notInterested ();
 
-	}
+	}*/
 
 	public void notInterested()
 	{
 
-		StopCoroutine ("noMoreFood");
-
-		this.isRunning = false;
+		//StopCoroutine ("noMoreFood");
+		//
+		//this.isRunning = false;
 
 		this.interested = false;
 
 		//Transform tempWaypoint = this.waypoint;
 
-		this.waypoint = this.prevWaypoint;
+		updateWaypoint (this.prevWaypoint);
 
 		//this.prevWaypoint = tempWaypoint;
 

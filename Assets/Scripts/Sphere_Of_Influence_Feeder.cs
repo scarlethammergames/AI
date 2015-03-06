@@ -11,6 +11,14 @@ public class Sphere_Of_Influence_Feeder : MonoBehaviour {
 		if(other.tag.Equals ("EnviroTile"))
 		{
 
+
+
+
+
+
+
+			/*
+			 * DEPRECATED
 			SphereCollider myCollider = transform.GetComponent<SphereCollider>();
 			myCollider.radius = this.eatingRadius;
 
@@ -19,7 +27,7 @@ public class Sphere_Of_Influence_Feeder : MonoBehaviour {
 			GetComponentInParent<Feeder_Mover>().setTempTarget (other.gameObject.transform);
 
 			GetComponentInParent<Feeder_Mover>().isInterested ();
-
+			*/
 	
 		}
 
